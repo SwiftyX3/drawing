@@ -10,6 +10,16 @@ def on_button_pressed_b():
     x_position += 1
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
+def on_gesture_shake():
+    basic.show_leds("""
+        . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+    """)
+input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
 def on_forever():
     global x_position, y_position
     if x_position > 4:
